@@ -25,8 +25,8 @@ time.sleep(3)
 #2 Get Rocket Mortgage 30 year refi rate
 chrome.get(rmRefiURL)
 time.sleep(3)
-rkt_rates = chrome.find_elements(By.CLASS_NAME, "rkt-mv4")
-rktRefiRate = rkt_rates[0].text.split("\n")[1]
+rkt_rates = chrome.find_elements(By.CLASS_NAME, "rkt-Heading-24")
+rktRefiRate = rkt_rates[1].text
 time.sleep(3)
 
 #3 Get Blaze 30 year refi rate
