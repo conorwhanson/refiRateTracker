@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from datetime import date
 
-# build URl variables
+# Define URl variables
 affRefiURL = "https://www.affinityplus.org/rates/mortgage-rates"
 rmRefiURL = "https://www.rocketmortgage.com/refinance-rates"
 blazeRefiURL = "https://blazecu.com/personal/borrow/mortgage/mortgage-refinance"
