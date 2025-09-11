@@ -1,5 +1,6 @@
 import csv
 import time
+import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from datetime import date
@@ -54,3 +55,9 @@ rates = [rateDate, aff30refi, rktRefiRate, blaze30Refi_rate, magnifi30Refi]
 with open("refiRates.csv", "a", newline = '') as file:
     writer = csv.writer(file, delimiter = ',')
     writer.writerow(rates)
+
+reRates = f"""30 Year Refinance Rates\n\nAffinity Plus Rate: {rates[1]}\nRocket Mortgage Rate: {rates[2]}\nBlaze CU Rate: {rates[3]}\nMagnifi Rate: {rates[4]}"""
+
+# YEET
+requests.post(f"https://ntfy.sh/30YrRefi4Lenders",
+    data = reRates.encode(encoding = 'utf-8'))
